@@ -1,0 +1,628 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=IBM+Plex+Serif:wght@400;500&family=Montserrat:ital,wght@1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,500;1,600&family=Work+Sans:wght@400;500&display=swap");
+
+/* CSS Reset  */
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Css For Body  */
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ======== Utility Classes ======= */
+
+.container {
+  max-width: 120rem;
+  width: 90%;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 1rem 2.2rem;
+  border-radius: 5rem;
+  font-weight: 500;
+  outline: none;
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background: #16a083;
+  color: #fff;
+}
+
+/* ========  navbar styling ======== */
+
+/* ====== For Desktop Mode ====== */
+
+.navbar-container input[type="checkbox"],
+.navbar-container .hamburger-lines {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 5px 10px 0px #aaa;
+  background: #fff;
+  color: #000;
+  opacity: 0.85;
+  z-index: 999;
+}
+
+.navbar-container {
+  height: 6.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Menu items styling ======  */
+
+.menu-items {
+  display: flex;
+  order: 2;
+}
+
+.menu-items li a {
+  font-size: 1.5rem;
+  margin-left: 1.2rem;
+  color: #444;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-items li a:hover {
+  color: #117964;
+}
+
+/* ===== Navbar Logo styling ======  */
+
+.logo {
+  font-size: 3rem;
+  order: 1;
+}
+
+/* ======= ShowCase Area Section =======  */
+
+#showcase {
+  height: 50vh;
+  background: linear-gradient(
+      rgba(240, 240, 240, 0.144),
+      rgba(255, 255, 255, 0.336)
+    ),
+    url("./Images/header-image2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.showcase-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  font-size: 1.6rem;
+}
+#showcase .main-title {
+  text-transform: uppercase;
+}
+
+/* ======= About Section =======  */
+
+#about {
+  padding: 50px 0px;
+  background: #f5f5f7;
+}
+
+.about-wrapper {
+  display: flex;
+}
+
+.about-text {
+  margin: auto;
+  max-width: 50%;
+}
+
+#about .about-title {
+  font-size: 1.7rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.about-text h2 {
+  font-size: 3.2rem;
+}
+
+.about-text p {
+  font-size: 1.6rem;
+  color: #555;
+}
+/* ====== About Img Styling ====== */
+
+.about-img {
+  display: block;
+  max-width: 70%;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: right;
+}
+
+/* ======= Food Category Section =======  */
+
+#category {
+  padding: 6rem 0;
+}
+#category h3.category-title {
+  font-size: 3rem;
+  color: #555;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 3rem 0;
+}
+
+.food-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.food-category-img {
+  position: relative;
+}
+
+.food-category-img img {
+  display: block;
+  max-width: 100%;
+}
+
+.food-category-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.food-category-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.871);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.food-category-img:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.food-category-img:hover .food-category-details {
+  opacity: 1;
+}
+
+.food-category-details h3 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.food-category-details a {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* ======= Food Menu Section =======  */
+
+#food-menu {
+  padding: 6rem 0;
+}
+
+.food-menu-title {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.food-menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 0 3rem 0;
+}
+
+.food-menu-item {
+  display: flex;
+  flex: 1 1 500px;
+  margin: 3rem 0 0 0;
+}
+
+.food-menu-container img {
+  display: block;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.food-description {
+  margin: auto 1.5rem;
+}
+
+.food-title {
+  font-size: 2rem;
+  font-weight: 550;
+  color: #444;
+}
+
+.food-description p {
+  font-size: 1.4rem;
+  color: #555;
+  font-weight: 400;
+}
+
+p.food-price {
+  font-weight: 700;
+  color: #117964;
+  margin: 1rem 0;
+}
+
+/* ======= Testimonial Section =======  */
+
+#testimonial {
+  padding: 6rem 0;
+  background: #f5f5f7;
+}
+
+.testimonial-heading {
+  text-align: center;
+  font-size: 3rem;
+  color: #555;
+}
+
+.testimonial-container {
+  display: flex;
+}
+
+.testimonial-box {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.star-rating {
+  font-size: 1.3rem;
+  color: rgb(255, 153, 0);
+}
+
+.testimonial-text {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.customer-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.customer-name {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ======= Contact Us Section =======  */
+
+#contact {
+  padding: 5rem 0;
+  background: #d1d1e6;
+}
+
+.contact-container {
+  display: flex;
+  padding: 0 5rem;
+}
+
+.contact-heading {
+  font-size: 3rem;
+  font-weight: 400;
+  padding: 0 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.contact-img {
+  width: 50%;
+}
+
+.contact-img img {
+  height: 40rem;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contact-form {
+  padding: 1rem;
+  width: 50%;
+  height: 40rem;
+  background: #fff;
+}
+
+input.name,
+input.email,
+.textarea {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-bottom: 2px solid #777;
+  margin-bottom: 1rem;
+  outline: none;
+  color: #444;
+  font-weight: 500;
+}
+
+/* ======= Footer Section =======  */
+
+#footer {
+  background: #555;
+  padding: 2rem 2rem;
+}
+
+#footer h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* ======= Mobile Responsive (Media Queries) =======  */
+
+/* ******** Hamburger Menu ***********/
+
+@media (max-width: 768px) {
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: block;
+  }
+
+  .navbar {
+    opacity: 0.95;
+  }
+
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 6.5rem;
+  }
+
+  .navbar-container input[type="checkbox"] {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 32px;
+    opacity: 0;
+    z-index: 5;
+  }
+
+  .navbar-container .hamburger-lines {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 41px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #000;
+    border-radius: 1rem;
+  }
+
+  .navbar .menu-items {
+    padding: 10rem 5rem;
+    height: 100vh;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 4px 0px 10px 0px #aaa;
+    transform: translateX(-120%);
+    transition: all 0.5s ease-in-out;
+    margin-left: -3.5rem;
+  }
+
+  .menu-items li a {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+  }
+
+  .logo {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 3rem;
+  }
+
+  /* *********** Hambuger Menu Calling Style ******************* */
+
+  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* ****************                        ********************* */
+
+  /* ======= Hamburger CLosing Toggle Style ========= */
+
+  .navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: all 0.4s ease-out;
+  }
+  .navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: all 0.4s ease-out;
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    display: none;
+  }
+
+  /* ======== About Section (Mobile) ======= */
+
+  .about-wrapper {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-text {
+    max-width: 80%;
+    padding: 1.5rem 0;
+  }
+
+  /* ======== Food Category Section (Mobile) ======= */
+
+  #category {
+    padding: 2rem 0;
+  }
+
+  .food-container {
+    flex-direction: column;
+  }
+
+  /* ======== Contact Section (Mobile) ======= */
+
+  .contact-container {
+    padding: 0;
+  }
+}
+
+/* ====================        Media Query For  (max-width: 536px)               ========================   */
+
+@media (max-width: 536px) {
+  html {
+    font-size: 50%;
+  }
+
+  /* ======== Hamburger Menu Section (Mobile) ======= */
+  .navbar-container .hamburger-lines {
+    top: 10px;
+  }
+  /* ======== Food Menu Section (Mobile) ======= */
+
+  #food-menu {
+    padding: 0;
+  }
+
+  .food-menu-container img {
+    display: block;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .food-menu-item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .food-description {
+    text-align: center;
+  }
+
+  /* ======== Testimonoial Section (Mobile) ======= */
+
+  .testimonial-container {
+    flex-direction: column;
+  }
+
+  /* ======== Contact Section (Mobile) ======= */
+
+  .contact-container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .contact-img {
+    width: 90%;
+    margin: 0 auto 2rem;
+  }
+
+  .contact-form {
+    width: 90%;
+    margin: auto;
+    height: auto;
+  }
+}
+
+/* ======================== landscape mode ============= */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  #showcase {
+    border: 2px solid black;
+    height: 50vmax;
+  }
+}
